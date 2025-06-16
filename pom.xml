@@ -82,6 +82,30 @@
           <release>21</release>
         </configuration>
       </plugin>
+      <!-- Plugin for generating Cucumber HTML reports -->
+      <plugin>
+        <groupId>net.masterthought</groupId>
+        <artifactId>maven-cucumber-reporting</artifactId>
+        <version>5.7.4</version>
+        <executions>
+          <execution>
+            <id>generate-report</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <projectName>My Selenium Cucumber Project</projectName>
+              <outputDirectory>${project.build.directory}/cucumber-advanced-reports</outputDirectory>
+              <jsonFiles>
+                <param>${project.build.directory}/cucumber.json</param>
+              </jsonFiles>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
+
+
 </project>
