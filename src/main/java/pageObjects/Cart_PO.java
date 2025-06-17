@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class Cart_PO extends Base_PO{
     private  @FindBy(id= "remove-sauce-labs-bike-light")
@@ -20,4 +21,9 @@ public class Cart_PO extends Base_PO{
     WebElement continueShoppingButtonCart;
     private  @FindBy(id= "checkout")
     WebElement checkoutButtonCart;
+
+    public void  remove_Sauce_Lab_Backpack(){
+        waitForwebElementAndClick(removeLabsBackpack);
+        //Assert.assertTrue(removeBackpackCartButton.isDisplayed(),"Difficulties encountered while clicking the Backpack ");
+    }
 }

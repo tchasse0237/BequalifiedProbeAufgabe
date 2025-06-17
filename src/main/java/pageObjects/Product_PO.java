@@ -72,7 +72,7 @@ public class Product_PO extends  Base_PO{
     public void  fourth_item_error_add_bike_light(){
 
         //Assert.assertTrue(addBikeLightButton.isDisplayed(),"Difficulties encountered while clicking the Bike Light ");
-        //Assert.assertTrue(isElementNotVisible(addBikeLightButton));
+        Assert.assertTrue(isElementNotVisible(addBikeLightButton), "addBikeLightButton is  clickable");
 
     }
 

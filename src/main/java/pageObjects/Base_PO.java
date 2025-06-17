@@ -71,12 +71,12 @@ public class Base_PO {
         String alert_Message_Text = getDriver().switchTo().alert().getText();
         Assert.assertEquals(alert_Message_Text,expectedText);
     }
-    public boolean isElementNotVisible(By locator) {
+    public boolean isElementNotVisible(WebElement element) {
         try {
-            WebElement element = getDriver().findElement(locator);
+            WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(10));
             return !element.isDisplayed(); // Element found but hidden
         } catch (NoSuchElementException e) {
-            return true; // Element not in DOM, so not visible
+            return true;
         }
     }
 
