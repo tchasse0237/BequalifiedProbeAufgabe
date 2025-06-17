@@ -49,6 +49,7 @@ public class Login_Steps extends Base_PO {
     public void i_should_get_error_message(String expectedMessage) {
         // Write code here that turns the phrase above into concrete actions
         loginPo.check_ErrorMessage(expectedMessage);
+
     }
 
     @When("I enter a random username")
@@ -62,4 +63,9 @@ public class Login_Steps extends Base_PO {
         // Write code here that turns the phrase above into concrete actions
         loginPo.inputPassword(generateRandomPUsernameassword(7,'e','i'));
     }
+    @Then ("Close and cleanup browser")
+        public void cleanup_close_browser(){
+        loginPo.cleanupDriver();
+        }
+
 }

@@ -24,6 +24,15 @@ public class Base_PO {
     public WebDriver getDriver() {
         return DriverFactory.getDriver();
     }
+    private  static  ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
+    public static  void  cleanupDriver(){
+        if (webDriver != null)
+        {
+        webDriver.get().quit();
+        webDriver.remove();
+        }
+    }
+
 
     public  String generateRandomPUsernameassword(int length, char from, char to) {
         //return RandomStringUtils.randomNumeric(length);
