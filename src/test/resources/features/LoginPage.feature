@@ -49,3 +49,4 @@ Feature:  Swag Labs - Login Page
     And I enter a random password
     And I click on the login button
     Then I should get Error message "Epic sadface: Username and password do not match any user in this service"
+

@@ -3,6 +3,7 @@ package pageObjects;
 import driver.DriverFactory;
 import org.apache.commons.text.RandomStringGenerator;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utils.Global_Vars;
+
 
 import java.time.Duration;
 
@@ -68,6 +70,14 @@ public class Base_PO {
         wait.until(ExpectedConditions.alertIsPresent());
         String alert_Message_Text = getDriver().switchTo().alert().getText();
         Assert.assertEquals(alert_Message_Text,expectedText);
+    }
+    public boolean isElementNotVisible(By locator) {
+        try {
+            WebElement element = getDriver().findElement(locator);
+            return !element.isDisplayed(); // Element found but hidden
+        } catch (NoSuchElementException e) {
+            return true; // Element not in DOM, so not visible
+        }
     }
 
 }

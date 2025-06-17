@@ -2,6 +2,7 @@ package pageObjects;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -43,7 +44,36 @@ public class Product_PO extends  Base_PO{
 
     public void  add_Sauce_Lab_Backpack(){
         waitForwebElementAndClick(addBackpackCartButton);
-        Assert.assertTrue(removeBackpackCartButton.isDisplayed(),"Backpack sucessfuly added to cart");
+        Assert.assertTrue(removeBackpackCartButton.isDisplayed(),"Difficulties encountered while clicking the Backpack ");
+    }
+
+    public void  add_Sauce_Lab_fleece_jacket(){
+        waitForwebElementAndClick(addFleeceJacketButton);
+        Assert.assertTrue(removeFleeceJacketButton.isDisplayed(),"Difficulties encountered while clicking the Fleece Jacket ");
+    }
+
+    public void  add_red_t_shirt(){
+        waitForwebElementAndClick(AddRedShirtButton);
+        Assert.assertTrue(removeRedShirtButton.isDisplayed(),"Difficulties encountered while clicking the  Red Shirt");
+    }
+
+    public void  add_onesie(){
+        waitForwebElementAndClick(addSauceLabsOnesieButton);
+        Assert.assertTrue(removeSauceLabsOnesieButton.isDisplayed(),"Difficulties encountered while clicking the Onesie ");
+    }
+    public void  add_bolt_shirt(){
+        waitForwebElementAndClick(addBoltShirtButton);
+        Assert.assertTrue(removeBoltShirtButton.isDisplayed(),"Difficulties encountered while clicking the  Bolt Shirt ");
+    }
+    public void  add_bike_light(){
+        waitForwebElementAndClick(addBikeLightButton);
+        Assert.assertTrue(removeBikeLightButton.isDisplayed(),"Difficulties encountered while clicking the Bike Light ");
+    }
+    public void  fourth_item_error_add_bike_light(){
+
+        //Assert.assertTrue(addBikeLightButton.isDisplayed(),"Difficulties encountered while clicking the Bike Light ");
+        //Assert.assertTrue(isElementNotVisible(addBikeLightButton));
+
     }
 
     public void navigate_to_cart(){
